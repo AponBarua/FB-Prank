@@ -1,0 +1,312 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Claim Rewards </title>
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfftJXhtCTWTTeD2WVVHOCANfkXSYPMc_Ryg&s type="image/x-icon" />
+	<style>
+		body {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-x: hidden;
+    width: 100%;
+}
+ul li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+.margin-40 {
+    margin: 40px 0;
+}
+
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        h1 span {
+            color: #ffffff;
+        }
+
+        h1 span:nth-child(2) {
+            color: #ff0000;
+        }
+
+        img {
+            margin-top: 1px;
+            max-width: 100%;
+            height: 100px;
+        }
+
+        .editable-text, .name-input {
+            border: none;
+            background: none;
+            font-size: 24px;
+            text-align: center;
+            outline: none;
+        }
+
+        .name-input {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        #run-btn {
+            padding: 5px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+			margin-top: 10px;
+			border-radius: 5px;
+        }
+
+        #run-btn:hover {
+            background-color: #45a049;
+        }
+
+        .convert-section {
+            margin-top: 20px;
+        }
+
+        select, #convert-btn {
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+
+        .withdraw-btn {
+            padding: 10px 20px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            cursor: pointer;
+			border-radius:5px;
+        }
+
+        .withdraw-btn:hover {
+            background-color: #e68a00;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            z-index: 9999;
+        }
+
+        .popup h3 {
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+        }
+
+        footer {
+            margin-top: 50px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .social-icon {
+            margin-top: 10px;
+        }
+
+          .social-icon a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            background: #7166ff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .number-animation {
+            font-size: 40px;
+            margin-top: 20px;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+        }
+
+        /* Add some simple transition animation */
+        .number-animation.animate {
+            animation: number-fade 1s ease-in-out;
+        }
+
+        @keyframes number-fade {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+  
+	</style>
+	
+</head>
+
+<body>
+	
+	<div class="background">
+    <header>
+        <h1>
+			<span>Apon</span> 
+			<span>Barua</span>
+		</h1>
+    </header>
+	<img src="https://possibleworks.com/wp-content/uploads/2021/02/rsz_8601.jpg" alt="Header Image">
+	<div class="name-section">
+        <input type="text" id="name-input" class="name-input" placeholder="Enter your name">
+    </div>
+	<div class="editable-section">
+        <input type="text" id="editable-text" class="editable-text" value="10000000" style="display:none;">
+        <button id="run-btn">
+			Run
+		</button>
+    </div>
+	<div class="number-animation" id="number-display"></div>
+
+    <div class="convert-section">
+        <h3>Convert to:</h3>
+			<select id="currency-select">
+				<option value="bdt">BDT</option>
+				<option value="rupee">Rupee</option>
+				<option value="usd">USD</option>
+			</select>
+        <button id="convert-btn">Convert</button>
+		<div id="conversion-result"></div>
+    </div>
+	<button class="withdraw-btn" id="withdraw-btn">Withdraw</button>
+	<div class="popup" id="popup">
+        <h3>This is just a prank. Today is April 1 😅</h3>
+        <button class="close-btn" id="close-btn">X</button>
+    </div>
+	<footer>
+        <p>Developer Apon</p>
+			<div class="social-icon">
+				<a href="https://aponbarua.github.io/aponbarua22.com/">Apon</a>
+			</div>
+    </footer>
+	
+	</div>
+	
+
+
+	<!--==================================================================-->
+	<script type="text/javascript" src="assets/js/jquery-3.2.0.min.js"></script>
+	<script>
+		window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.12.0.min.js"><\/script>')
+	</script>
+	<script type="text/javascript" src="assets/js/plugin/wow.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugin/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugin/jquery.magnific-popup.min.js"></script>
+
+	<!--=== All Active ===-->
+	<script type="text/javascript" src="assets/js/main.js"></script>
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+        const nameInput = document.getElementById('name-input');
+        const runBtn = document.getElementById('run-btn');
+        const numberDisplay = document.getElementById('number-display');
+        const editableText = document.getElementById('editable-text');
+        const currencySelect = document.getElementById('currency-select');
+        const convertBtn = document.getElementById('convert-btn');
+        const conversionResult = document.getElementById('conversion-result');
+        const withdrawBtn = document.getElementById('withdraw-btn');
+        const popup = document.getElementById('popup');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Function to generate a random number in a specified range
+        function generateRandomNumber() {
+            const randomNumbers = [11575091, 51474794, 31778024];
+            return randomNumbers[Math.floor(Math.random() * randomNumbers.length)];
+        }
+
+        // Show number when name is entered and click happens in an empty area
+        nameInput.addEventListener('blur', () => {
+            if (nameInput.value) {
+                const randomNum = generateRandomNumber();
+                numberDisplay.innerHTML = randomNum;
+                numberDisplay.style.display = 'block';
+                numberDisplay.classList.add('animate');
+            }
+        });
+
+        // Show animated number when 'Run' button is clicked
+        runBtn.addEventListener('click', () => {
+            if (numberDisplay.style.display === 'block') {
+                const newRandomNumber = generateRandomNumber();
+                numberDisplay.innerHTML = newRandomNumber;
+                numberDisplay.classList.add('animate');
+            }
+        });
+
+        // Currency conversion logic
+        convertBtn.addEventListener('click', () => {
+            let number = parseInt(numberDisplay.innerHTML);
+            let currency = currencySelect.value;
+            let convertedValue;
+
+            if (currency === 'bdt') {
+                convertedValue = number / 10000000 * 100 + ' BDT';
+            } else if (currency === 'rupee') {
+                convertedValue = number / 10000000 * 80 + ' Rupee';
+            } else if (currency === 'usd') {
+                convertedValue = number / 10000000 * 1 + ' USD';
+            }
+
+            conversionResult.innerHTML = 'Converted Value: ' + convertedValue;
+        });
+
+        // Withdraw button logic
+        withdrawBtn.addEventListener('click', () => {
+            popup.style.display = 'block';
+        });
+
+        // Close popup
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
